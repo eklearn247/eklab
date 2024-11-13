@@ -1,0 +1,22 @@
+---
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    hostname: caddy
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /home/ek/docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - /home/ek/docker/caddy/site:/srv
+      - /home/ek/docker/caddy/caddy_data:/data
+      - /home/ek/docker/caddy/caddy_config:/config
+    networks:
+      - proxy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+networks:
+  proxy:
