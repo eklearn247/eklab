@@ -1,0 +1,8 @@
+{
+  email ekh.demo@gmail.com  
+}
+
+  site1.example.com {
+     reverse_proxy site1:8080
+
+}

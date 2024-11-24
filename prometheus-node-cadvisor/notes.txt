@@ -1,0 +1,9 @@
+Grafana dashboard:
+
+Node Exporter Full with Node Name     ID: 10242
+
+Node Exporter Full     ID: 1860
+
+Windows Exporter Dashboard 2024  ID: 20763
+
+cAdvisor exporter - Docker containers Overview ID: 21743

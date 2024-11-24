@@ -1,0 +1,22 @@
+---
+networks:
+  grafana-monitoring:
+    driver: bridge
+    name: grafana-monitoring
+  caddy-proxy:
+    external: true
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    user: "1000"
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana:/var/lib/grafana
+    networks:
+      - grafana-monitoring
+      - caddy-proxy
